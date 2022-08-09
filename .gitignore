@@ -16,6 +16,7 @@ bin-release/
 uploads/
 node_modules/
 logs/
+run/
 .project
 dist/
 mysql_data
