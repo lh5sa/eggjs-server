@@ -6,5 +6,5 @@ module.exports = {
   port: 3306,
   database: 'simple_admin',
   username: 'root',
-  password: 'root',
+  password: '123456',
 };
