@@ -6,16 +6,29 @@
 
 ## 数据库相关
 
-需要手动创建数据库 `create database xxx`, 然后再导入或者迁移
-
 - 数据库环境准备: 默认使用 sequelize + mysql, 理论上来说 sequelize 可以支持其他数据库例如 pgsql 之类的, 但是我没有测试过
-- 数据库迁移使用: 你可以直接用[sequelize-cli](https://www.sequelize.cn/other-topics/migrations)来填充, 也可以手动导入 `db.sql`
-- 数据库数据填充: 填充一些假数据, 让项目可以有数据跑起来, 没有数据的, 没有办法登录
+
+### 迁移/填充数据
+
+需要手动创建数据库 `create database xxx`, 建议使用 `utf8mb4` 字符集
+
+然后手动导入 `db.sql`, 也可以使用命令行来迁移和填充数据
 
 ```sh
-# 迁移 / 填充
-npx sequelize-cli
+# 注意执行命令时, 需要在 database-migration 目录下执行
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed
 ```
+
+> 迁移
+
+注意需要修改数据库链接配置 `database/config/config.json`, 这个是配置是给 `sequelize-cli` 用的
+
+然后直接用[sequelize-cli](https://www.sequelize.cn/other-topics/migrations)命令来迁移,
+
+> 填充
+
+填充一些假数据, 让项目可以有数据跑起来, 没有数据的, 没有办法登录, 如果是直接导入的 sql 文件, 就不需要再填充了
 
 ## 客户端
 
@@ -23,8 +36,8 @@ npx sequelize-cli
 
 - 关于加密/签名规则请查看[文档](https://lh5sa.github.io/eggjs-server/#/)
 
-* [vue2-client] (https://github.com/lh5sa/vue2-client)
-* [vue3-client] (https://github.com/lh5sa/vue3-client)
+* [vue2-client](https://github.com/lh5sa/vue2-client)
+* [vue3-client](https://github.com/lh5sa/vue3-client)
 
 ## 快速开始
 

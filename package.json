@@ -28,6 +28,7 @@
     "egg-mock": "^3.21.0",
     "eslint": "^5.13.0",
     "eslint-config-egg": "^7.1.0",
+    "mockjs": "^1.1.0",
     "sequelize-cli": "^6.6.0"
   },
   "engines": {
