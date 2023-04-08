@@ -37,7 +37,7 @@ class RoleService extends Service {
    */
   deleteRoleById(id) {
     const { Role, UserRole } = this.ctx.model;
-    return this.ctx.model.transaction(transaction => {
+    return this.ctx.model.transaction((transaction) => {
       Role.destroy({ where: { id } }, { transaction });
       UserRole.destroy({ where: { role_id: id } }, { transaction });
     });
@@ -63,7 +63,7 @@ class RoleService extends Service {
     const has = permissionIds.length > 0;
     const where = { role_id: { [Op.eq]: roleId } }; // role_id=roleId
     if (has) {
-      permissionIds.forEach(id => {
+      permissionIds.forEach((id) => {
         rows.push({ role_id: roleId, permission_id: id });
       });
     }

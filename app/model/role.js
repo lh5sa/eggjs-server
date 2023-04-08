@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = app => {
+module.exports = (app) => {
   const DataTypes = app.Sequelize;
   const Role = app.model.define(
     'role',

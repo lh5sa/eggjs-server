@@ -19,7 +19,7 @@ module.exports = {
   avatar: {
     type: 'string',
     required: false,
-    allowEmpty: false,
+    allowEmpty: true,
     format: /^(https?:\/\/)([a-z0-9]+\.?)+(\:\d+)?[a-z0-9:\/~.&$]*$/i,
     message: '头像地址有误',
   },

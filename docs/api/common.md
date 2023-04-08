@@ -30,7 +30,7 @@
 
 > 所有接口的数据都必须通过接口数据签名防止数据被篡改
 
-- 具体代码: `/client/src/api/http.js`
+- 具体代码: https://github.com/lh5sa/vue2-client/blob/main/src/api/http.js#L13
 
 - 客户端将需要传递的接口参数, 通过 `jsencrypt` 生成一个签名并存入到 http header 中,字段名 `Client-Signature`
 

@@ -1,7 +1,7 @@
 'use strict';
 const bcrypt = require('bcryptjs');
 
-module.exports = app => {
+module.exports = (app) => {
   const { STRING, INTEGER } = app.Sequelize;
   const User = app.model.define(
     'user',

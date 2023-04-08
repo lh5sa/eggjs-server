@@ -71,9 +71,9 @@ class UserService extends Service {
       return [];
     }
     const permis = Object.create(null);
-    userinfos.roles.forEach(role => {
+    userinfos.roles.forEach((role) => {
       if (role.permissions.length) {
-        role.permissions.forEach(item => {
+        role.permissions.forEach((item) => {
           if (!permis[item.id]) {
             permis[item.id] = item;
           }
@@ -184,7 +184,7 @@ class UserService extends Service {
     const rows = [];
     const hasRoles = roleIds.length > 0;
     const where = { user_id: { [Op.eq]: uid } }; // user_id=uid
-    hasRoles && roleIds.forEach(id => rows.push({ user_id: uid, role_id: id }));
+    hasRoles && roleIds.forEach((id) => rows.push({ user_id: uid, role_id: id }));
 
     // 开启事务: 将原来的删除, 增加新的
     const transaction = await this.ctx.model.transaction();
@@ -213,7 +213,7 @@ class UserService extends Service {
     // 旧密码是否有误, 正确就直接修改
     const isValid = bcrypt.compareSync(data.old_password, user.password);
     if (!isValid) {
-      throw new Error('邮箱或密码有误');
+      throw new Error('原密码有误');
     }
     user.password = data.new_password;
     return await user.save();

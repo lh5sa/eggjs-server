@@ -37,7 +37,7 @@ class PermissionService extends Service {
         raw: true,
       }
     );
-    return rolePermis.map(item => item.permission_id);
+    return rolePermis.map((item) => item.permission_id);
   }
 
   /**
@@ -57,7 +57,7 @@ class PermissionService extends Service {
         raw: true,
       }
     );
-    return userRoles.map(item => item.role_id);
+    return userRoles.map((item) => item.role_id);
   }
 
   /**
@@ -82,8 +82,8 @@ class PermissionService extends Service {
    */
   getTree(data) {
     const cloneDatas = JSON.parse(JSON.stringify(data));
-    return cloneDatas.filter(root => {
-      const children = cloneDatas.filter(child => root.id === child.pid);
+    return cloneDatas.filter((root) => {
+      const children = cloneDatas.filter((child) => root.id === child.pid);
       if (children.length > 0) {
         root.children = children;
       }

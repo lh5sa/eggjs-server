@@ -45,7 +45,7 @@ class UploadController extends Controller {
       const writeStream = fs.createWriteStream(filepath);
       stream.pipe(writeStream);
       writeStream.on('finish', () => resolve({ url }));
-      writeStream.on('error', e => reject(e.message));
+      writeStream.on('error', (e) => reject(e.message));
     });
   }
 }
